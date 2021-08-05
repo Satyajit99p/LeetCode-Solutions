@@ -1,0 +1,13 @@
+class Solution {
+    public boolean isPowerOfFour(int n) {
+        System.out.println(n);
+        if(n == 1)
+            return true;
+        if(n<1)
+            return false;
+        if(n%4==0)
+            return isPowerOfFour(n/4);
+        else
+            return false;
+    }
+}
