@@ -1,0 +1,25 @@
+class Solution(object):
+    def slowestKey(self, releaseTimes, keysPressed):
+        """
+        :type releaseTimes: List[int]
+        :type keysPressed: str
+        :rtype: str
+        """
+        dct=[]
+        dct.append(releaseTimes[0]-0)
+        n=len(releaseTimes)
+        for i in range(1,n):
+          dct.append(releaseTimes[i]-releaseTimes[i-1])
+        #print(dct)
+        max=0
+        for i in range(0,n):
+          if(dct[i]>=max):
+             max=dct[i]
+        #print(max)
+        al=[]
+        for i in range(0,n):
+          if(dct[i] == max):
+             al.append(keysPressed[i])
+        al.sort()
+        return al[-1]
+        
